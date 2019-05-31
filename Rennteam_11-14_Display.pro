@@ -34,3 +34,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     candrv.h \
     displaydrv.h
+
+# Workaround for stdlib.h error
+QMAKE_CFLAGS_ISYSTEM=

@@ -11,9 +11,15 @@ struct displayData_t{
     Q_GADGET
 public:
     QList<qreal> grid;
+    QList<bool> limit;
     QString gear;
+    qreal rev;
+    quint8 page;
     Q_PROPERTY(QList<qreal> grid MEMBER grid)
+    Q_PROPERTY(QList<bool> limit MEMBER limit)
     Q_PROPERTY(QString gear MEMBER gear)
+    Q_PROPERTY(qreal rev MEMBER rev)
+    Q_PROPERTY(quint8 page MEMBER page)
 };
 
 Q_DECLARE_METATYPE(displayData_t)

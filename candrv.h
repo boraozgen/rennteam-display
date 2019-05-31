@@ -14,10 +14,10 @@
 struct canData_t{
     Q_GADGET
 public:
-    double brakePressureRight;
-    double brakePressureLeft;
+    double brakePressureFront;
+    double brakePressureRear;
     unsigned gear;
-    int steeringAngle;
+    short steeringAngle;
     unsigned engineSpeed;
     double fuelPressure;
     double engineOilPressure;

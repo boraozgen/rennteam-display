@@ -46,7 +46,7 @@ void CanDrv::processReceivedFrames()
                 .arg(frame.timeStamp().seconds(), 10, 10, QLatin1Char(' '))
                 .arg(frame.timeStamp().microSeconds() / 100, 4, 10, QLatin1Char('0'));
 
-        qDebug() << view;
+       // qDebug() << view;
 
         switch(frame.frameId()) {
         case FRAME_DATA_1:
@@ -59,6 +59,12 @@ void CanDrv::processReceivedFrames()
             m_canData.ambientPressure = (double)frame.payload()[6] / 4 + 80;
             break;
         case FRAME_DATA_2:
+            m_canData.throttlePosition = (double)frame.payload()[0] / 2;
+            m_canData.engineOilPressure = (double)frame.payload()[1] / 10 - 1;
+            m_canData.fuelPressure = (double)frame.payload()[2] / 10;
+            m_canData.engineSpeed = (unsigned)frame.payload()[3] * 50;
+            m_canData.steeringAngle = (short)(frame.payload()[4] << 8) | (int)(frame.payload()[5]);
+            m_canData.gear = (unsigned)frame.payload()[6];
             break;
         case FRAME_DATA_3:
             break;
@@ -79,7 +85,7 @@ void CanDrv::mockCanData() {
 
     m_canData.engineWaterTemperature += 0.1;
 
-    qDebug() << "mockCanData: " << m_canData.engineWaterTemperature;
+    // qDebug() << "mockCanData: " << m_canData.engineWaterTemperature;
 
     emit newCanData();
 }
