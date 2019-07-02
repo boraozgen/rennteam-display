@@ -29,7 +29,7 @@ public:
     double ambientTemperature;
     double engineOilTemperature;
     double engineWaterTemperature;
-    unsigned displaySetting;
+    unsigned pageButton;
     Q_PROPERTY(int steeringAngle MEMBER steeringAngle)
 };
 

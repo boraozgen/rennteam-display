@@ -5,7 +5,7 @@
 #include <QVector>
 #include "candrv.h"
 
-#define GRID_SIZE   8
+#define GRID_SIZE   9
 
 struct displayData_t{
     Q_GADGET
