@@ -6,6 +6,7 @@
 #include "candrv.h"
 
 #define GRID_SIZE   9
+#define PAGE_COUNT  3
 
 struct displayData_t{
     Q_GADGET
@@ -15,6 +16,7 @@ public:
     QString gear;
     qreal rev;
     quint8 page;
+    quint8 prevButton;
     Q_PROPERTY(QList<qreal> grid MEMBER grid)
     Q_PROPERTY(QList<bool> limit MEMBER limit)
     Q_PROPERTY(QString gear MEMBER gear)

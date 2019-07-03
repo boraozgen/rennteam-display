@@ -15,6 +15,7 @@ DisplayDrv::DisplayDrv(QObject *parent) : QObject(parent)
     m_displayData.limit = {false, false, false, false, false, false, false, false, false};
     m_displayLabels.gridLabel = {"Water Temp", "Oil Temp", "Amb Temp", "Airbox Temp",
                               "Fuel Temp", "Oil Pres", "Amb Pres", "Fuel Pres"};
+    m_displayData.prevButton = 0;
 }
 
 displayData_t DisplayDrv::readDisplayData()
@@ -32,8 +33,19 @@ void DisplayDrv::setCanData(canData_t canData)
 {
     m_canData = canData;
 
+    if (m_canData.pageButton > m_displayData.prevButton) {
+        if (m_displayData.page < PAGE_COUNT - 1) {
+            m_displayData.page++;
+        } else {
+            m_displayData.page = 0;
+        }
+    }
+
+    m_displayData.prevButton = (quint8)m_canData.pageButton;
+
     switch (m_displayData.page) {
     case 0:
+    case 1:
         m_displayData.grid[0] = m_canData.engineWaterTemperature;
         m_displayData.grid[1] = m_canData.engineOilTemperature;
         m_displayData.grid[2] = m_canData.fuelPressure;
@@ -44,6 +56,7 @@ void DisplayDrv::setCanData(canData_t canData)
         m_displayData.grid[7] = m_canData.brakePressureRear;
         m_displayData.grid[8] = m_canData.engineSpeed;
 
+        // DaPe: AAB
         // Limit checks
         // rpm > 3000, one vale over limit, whole displayy red
         // TODO: not the ideal place for this. CanDrv instead?
@@ -56,9 +69,6 @@ void DisplayDrv::setCanData(canData_t canData)
         m_displayData.limit[6] = !inRange(3, 60, m_canData.brakePressureFront);
         m_displayData.limit[7] = !inRange(3, 60, m_canData.brakePressureRear);
         m_displayData.limit[8] = !inRange(-1, 11000, m_canData.engineSpeed);
-        break;
-    case 1:
-        // DaPe: AAB
         break;
     default:
         break;
