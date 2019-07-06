@@ -174,26 +174,26 @@ Window {
         }
 
         Text {
-            id: oil_pres
+            id: fuel_pres
             x: 50
             y: 380
             width: 140
             height: 40
             color: "#ffffff"
-            text: "Oil Pres"
+            text: "Fuel Pres"
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             elide: Text.ElideRight
             font.pixelSize: 20
         }
 
         Text {
-            id: fuel_pres
+            id: oil_pres
             x: 50
             y: 260
             width: 140
             height: 40
             color: "#ffffff"
-            text: "Fuel Pres"
+            text: "Oil Pres"
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             elide: Text.ElideRight
             font.pixelSize: 20
@@ -413,6 +413,38 @@ Window {
 
             Text {
                 id: rev_count_data
+                color: "#ffffff"
+                text: dd.displayData.grid[8].toFixed(0)
+                wrapMode: Text.NoWrap
+                elide: Text.ElideRight
+                font.pixelSize: 50
+            }
+        }
+
+        /* Engine map */
+
+        Text {
+            id: engine_map
+            x: 600
+            y: 30
+            width: 100
+            height: 40
+            color: "#ffffff"
+            text: "Map"
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            elide: Text.ElideRight
+            font.pixelSize: 20
+        }
+
+        Rectangle {
+            color: "transparent"
+            x: 650
+            y: 5
+            width: 120
+            height: 50
+
+            Text {
+                id: engine_map_data
                 color: "#ffffff"
                 text: dd.displayData.grid[8].toFixed(0)
                 wrapMode: Text.NoWrap

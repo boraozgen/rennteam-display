@@ -10,8 +10,8 @@ DisplayDrv::DisplayDrv(QObject *parent) : QObject(parent)
     m_displayData.gear = "N";
     m_displayData.page = 0;
     m_displayData.rev = 0;
-    m_displayData.grid = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-    //m_displayData.grid = {100, 90, 3.5, 5.5, 50, 4000, 50, 50}; // Test
+    m_displayData.grid = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    //m_displayData.grid = {100, 90, 3.5, 5.5, 50, 4000, 50, 50, 1}; // Test
     m_displayData.limit = {false, false, false, false, false, false, false, false, false};
     m_displayLabels.gridLabel = {"Water Temp", "Oil Temp", "Amb Temp", "Airbox Temp",
                               "Fuel Temp", "Oil Pres", "Amb Pres", "Fuel Pres"};
@@ -55,6 +55,7 @@ void DisplayDrv::setCanData(canData_t canData)
         m_displayData.grid[6] = m_canData.brakePressureFront;
         m_displayData.grid[7] = m_canData.brakePressureRear;
         m_displayData.grid[8] = m_canData.engineSpeed;
+        // m_displayData.grid[9] = m_canData.engineMap;
 
         // DaPe: AAB
         // Limit checks
