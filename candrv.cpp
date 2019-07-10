@@ -7,12 +7,22 @@ CanDrv::CanDrv(QObject *parent) : QObject(parent)
     QString errorString;
     m_canDevice = QCanBus::instance()->createDevice(
         QStringLiteral("socketcan"), QStringLiteral("can1"), &errorString);
+
     if (!m_canDevice) {
         // Error handling goes here
         while(1);
     } else {
 
-        // TODO: add CAN filter
+        QCanBusDevice::Filter filter;
+        QList<QCanBusDevice::Filter> filterList;
+
+        filter.frameId = 0x100;
+        filter.frameIdMask = 0x7F0;
+        filter.format = QCanBusDevice::Filter::MatchBaseFormat;
+        filter.type = QCanBusFrame::DataFrame;
+        filterList.append(filter);
+
+        m_canDevice->setConfigurationParameter(QCanBusDevice::RawFilterKey, QVariant::fromValue(filterList));
 
         connect(m_canDevice, &QCanBusDevice::framesReceived, this, &CanDrv::processReceivedFrames);
 
