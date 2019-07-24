@@ -11,7 +11,7 @@ DisplayDrv::DisplayDrv(QObject *parent) : QObject(parent)
     m_displayData.page = 0;
     m_displayData.rev = 0;
     m_displayData.grid = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-    //m_displayData.grid = {100, 90, 3.5, 5.5, 50, 4000, 50, 50}; // Test
+    //m_displayData.grid = {100, 90, 3.5, 5.5, 50, 1, 1, 50, 1000}; // Test
     m_displayData.limit = {false, false, false, false, false, false, false, false, false};
     m_displayLabels.gridLabel = {"Water Temp", "Oil Temp", "Amb Temp", "Airbox Temp",
                               "Fuel Temp", "Oil Pres", "Amb Pres", "Fuel Pres"};
@@ -45,7 +45,6 @@ void DisplayDrv::setCanData(canData_t canData)
 
     switch (m_displayData.page) {
     case 0:
-    case 1:
         m_displayData.grid[0] = m_canData.engineWaterTemperature;
         m_displayData.grid[1] = m_canData.engineOilTemperature;
         m_displayData.grid[2] = m_canData.fuelPressure;
@@ -56,7 +55,6 @@ void DisplayDrv::setCanData(canData_t canData)
         m_displayData.grid[7] = m_canData.brakePressureRear;
         m_displayData.grid[8] = m_canData.engineSpeed;
 
-        // DaPe: AAB
         // Limit checks
         // rpm > 3000, one vale over limit, whole displayy red
         // TODO: not the ideal place for this. CanDrv instead?
@@ -68,6 +66,28 @@ void DisplayDrv::setCanData(canData_t canData)
         m_displayData.limit[5] = !inRange(12, 14, m_canData.batteryVoltage);
         m_displayData.limit[6] = !inRange(3, 60, m_canData.brakePressureFront);
         m_displayData.limit[7] = !inRange(3, 60, m_canData.brakePressureRear);
+        m_displayData.limit[8] = !inRange(-1, 11000, m_canData.engineSpeed);
+        break;
+    case 1:
+        m_displayData.grid[0] = m_canData.engineWaterTemperature;
+        m_displayData.grid[1] = m_canData.engineOilTemperature;
+        m_displayData.grid[2] = m_canData.aab;
+        m_displayData.grid[3] = m_canData.arb;
+        m_displayData.grid[4] = m_canData.throttlePosition;
+        m_displayData.grid[5] = m_canData.batteryVoltage;
+        m_displayData.grid[6] = m_canData.brakePressureFrontRatio;
+        m_displayData.grid[7] = m_canData.tractionControl;
+        m_displayData.grid[8] = m_canData.engineSpeed;
+
+        // Limit checks
+        m_displayData.limit[0] = !inRange(20, 90, m_canData.engineWaterTemperature); // 20-80 gelb
+        m_displayData.limit[1] = !inRange(20, 130, m_canData.engineOilTemperature); // 20-60 gelb
+        m_displayData.limit[2] = false;
+        m_displayData.limit[3] = false;
+        m_displayData.limit[4] = !inRange(8, 100, m_canData.throttlePosition);
+        m_displayData.limit[5] = !inRange(12, 14, m_canData.batteryVoltage);
+        m_displayData.limit[6] = false;
+        m_displayData.limit[7] = false;
         m_displayData.limit[8] = !inRange(-1, 11000, m_canData.engineSpeed);
         break;
     default:

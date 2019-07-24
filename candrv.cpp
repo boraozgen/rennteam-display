@@ -79,6 +79,12 @@ void CanDrv::processReceivedFrames()
         case FRAME_DATA_3:
             m_canData.brakePressureFront = (double)frame.payload()[0] / 2;
             m_canData.brakePressureRear = (double)frame.payload()[1] / 2;
+            m_canData.tractionControl = (unsigned)frame.payload()[2];
+            m_canData.aab = (unsigned)frame.payload()[3];
+            m_canData.arb = (unsigned)frame.payload()[4];
+
+            // Calculate brake pressure ratio
+            m_canData.brakePressureFrontRatio = m_canData.brakePressureFront / ( m_canData.brakePressureFront + m_canData.brakePressureRear) * 100 ;
             break;
         case FRAME_DATA_4:
             m_canData.pageButton = (unsigned)frame.payload()[0];

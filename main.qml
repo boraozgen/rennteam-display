@@ -431,6 +431,275 @@ Window {
         height: 480
         visible: (dd.displayData.page === 1)
 
+        // Bottom Circle Highlight
+        Rectangle {
+            id: screen2_check
+            x: 390
+            y: 440
+            width: 20
+            height: 20
+            color: "#ffffff"
+            radius: 10
+        }
+
+        // Following graphic is for the left hand side
+
+        Text {
+            id: water_temp_2
+            x: 200
+            y: 380
+            width: 140
+            height: 40
+            color: "#ffffff"
+            text: "Water Temp"
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            elide: Text.ElideRight
+            font.pixelSize: 20
+        }
+
+        Text {
+            id: oil_temp_2
+            x: 200
+            y: 260
+            width: 140
+            height: 40
+            color: "#ffffff"
+            text: "Oil Temp"
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            elide: Text.ElideRight
+            font.pixelSize: 20
+        }
+
+        Text {
+            id: aab
+            x: 50
+            y: 380
+            width: 140
+            height: 40
+            color: "#ffffff"
+            text: "AAB"
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            elide: Text.ElideRight
+            font.pixelSize: 20
+        }
+
+        Text {
+            id: arb
+            x: 50
+            y: 260
+            width: 140
+            height: 40
+            color: "#ffffff"
+            text: "ARB"
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            elide: Text.ElideRight
+            font.pixelSize: 20
+        }
+
+        Rectangle {
+            color: (dd.displayData.limit[0] === true ? "red" : "transparent")
+            x: 200
+            y: 320
+            width: 120
+            height: 60
+
+            Text {
+                id: water_temp_data_2
+                color: "#ffffff"
+                text: dd.displayData.grid[0].toFixed(1)
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                elide: Text.ElideRight
+                font.pixelSize: 60
+            }
+        }
+
+        Rectangle {
+            color: (dd.displayData.limit[1] === true ? "red" : "transparent")
+            x: 200
+            y: 200
+            width: 120
+            height: 60
+
+            Text {
+                id: oil_temp_data_2
+                color: "#ffffff"
+                text: dd.displayData.grid[1].toFixed(1)
+                wrapMode: Text.NoWrap
+                elide: Text.ElideRight
+                font.pixelSize: 60
+            }
+        }
+
+        Rectangle {
+            color: (dd.displayData.limit[2] === true ? "red" : "transparent")
+            x: 50
+            y: 330
+            width: 120
+            height: 60
+
+            Text {
+                id: aab_data
+                color: "#ffffff"
+                text: (dd.displayData.grid[2] === 0 ? "Off" : "On")
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                elide: Text.ElideRight
+                font.pixelSize: 50
+            }
+        }
+
+        Rectangle {
+            color: (dd.displayData.limit[3] === true ? "red" : "transparent")
+            x: 50
+            y: 210
+            width: 120
+            height: 60
+
+            Image {
+                id: arb_logo
+                width: 50
+                height: 50
+                source: (dd.displayData.grid[3] === 0 ? "img/arb_inactive.png" : "img/arb.png")
+                fillMode: Image.PreserveAspectFit
+            }
+        }
+
+        // Following graphic is for the right hand side
+
+        Text {
+            id: throttle_pos_2
+            x: 650
+            y: 380
+            width: 140
+            height: 40
+            color: "#ffffff"
+            text: "Throttle"
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            elide: Text.ElideRight
+            font.pixelSize: 20
+        }
+
+        Text {
+            id: battery_voltage_2
+            x: 650
+            y: 260
+            width: 140
+            height: 40
+            color: "#ffffff"
+            text: "Battery"
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            elide: Text.ElideRight
+            font.pixelSize: 20
+        }
+
+        Text {
+            id: brake_front_percent
+            x: 500
+            y: 260
+            width: 140
+            height: 40
+            color: "#ffffff"
+            text: "Brake F %"
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            elide: Text.ElideRight
+            font.pixelSize: 20
+        }
+
+        Text {
+            id: traction_control
+            x: 500
+            y: 380
+            width: 140
+            height: 40
+            color: "#ffffff"
+            text: "Trac Cont"
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            elide: Text.ElideRight
+            font.pixelSize: 20
+        }
+
+        Rectangle {
+            color: (dd.displayData.limit[4] === true ? "red" : "transparent")
+            x: 650
+            y: 320
+            width: 120
+            height: 60
+
+            Text {
+                id: throttle_pos_data_2
+                color: "#ffffff"
+                text: (dd.displayData.grid[4] === 100 ? dd.displayData.grid[4].toFixed(0) : dd.displayData.grid[4].toFixed(1))
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                elide: Text.ElideRight
+                font.pixelSize: 60
+            }
+        }
+
+        Rectangle {
+            color: (dd.displayData.limit[5] === true ? "red" : "transparent")
+            x: 650
+            y: 200
+            width: 120
+            height: 60
+
+            Text {
+                id: battery_voltage_data_2
+                color: "#ffffff"
+                text: dd.displayData.grid[5].toFixed(1)
+                wrapMode: Text.NoWrap
+                elide: Text.ElideRight
+                font.pixelSize: 60
+            }
+        }
+
+        Rectangle {
+            color: (dd.displayData.limit[6] === true ? "red" : "transparent")
+            x: 500
+            y: 200
+            width: 120
+            height: 60
+
+            Text {
+                id: brake_front_percent_data
+                color: "#ffffff"
+                text: dd.displayData.grid[6].toFixed(1)
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                elide: Text.ElideRight
+                font.pixelSize: 60
+            }
+        }
+
+        Rectangle {
+            color: (dd.displayData.limit[7] === true ? "red" : "transparent")
+            x: 500
+            y: 320
+            width: 120
+            height: 60
+
+            Text {
+                id: traction_control_data
+                color: "#ffffff"
+                text: dd.displayData.grid[7].toFixed(0)
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                elide: Text.ElideRight
+                font.pixelSize: 60
+            }
+        }
+
+        /* Rev count */
+
+        Text {
+            id: rev_count_2
+            x: 50
+            y: 100
+            width: 100
+            height: 40
+            color: "#ffffff"
+            text: "RPM"
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            elide: Text.ElideRight
+            font.pixelSize: 20
+        }
+
         Rectangle {
             color: (dd.displayData.limit[8] === true ? "blue" : "transparent")
             x: 50
@@ -439,7 +708,7 @@ Window {
             height: 60
 
             Text {
-                id: test
+                id: rev_count_data_2
                 color: "#ffffff"
                 text: dd.displayData.grid[8].toFixed(0)
                 wrapMode: Text.NoWrap

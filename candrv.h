@@ -30,6 +30,10 @@ public:
     double engineOilTemperature;
     double engineWaterTemperature;
     unsigned pageButton;
+    unsigned tractionControl;
+    unsigned aab;
+    unsigned arb;
+    double brakePressureFrontRatio;
     Q_PROPERTY(int steeringAngle MEMBER steeringAngle)
 };
 

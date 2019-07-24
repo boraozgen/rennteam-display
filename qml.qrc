@@ -7,5 +7,7 @@
         <file>img/carbonfiber_background.png</file>
         <file>img/horse.png</file>
         <file>img/steering_wheel.png</file>
+        <file>img/arb.png</file>
+        <file>img/arb_inactive.png</file>
     </qresource>
 </RCC>
