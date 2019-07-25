@@ -200,7 +200,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[0] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[0] === true ? "blue" : "transparent")
             x: 200
             y: 320
             width: 120
@@ -217,7 +217,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[1] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[1] === true ? "blue" : "transparent")
             x: 200
             y: 200
             width: 120
@@ -234,7 +234,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[2] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[2] === true ? "blue" : "transparent")
             x: 50
             y: 320
             width: 120
@@ -251,7 +251,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[3] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[3] === true ? "blue" : "transparent")
             x: 50
             y: 200
             width: 120
@@ -322,7 +322,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[4] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[4] === true ? "blue" : "transparent")
             x: 650
             y: 320
             width: 120
@@ -339,7 +339,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[5] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[5] === true ? "blue" : "transparent")
             x: 650
             y: 200
             width: 120
@@ -356,7 +356,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[6] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[6] === true ? "blue" : "transparent")
             x: 500
             y: 200
             width: 120
@@ -373,7 +373,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[7] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[7] === true ? "blue" : "transparent")
             x: 500
             y: 320
             width: 120
@@ -405,7 +405,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[8] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[8] === true ? "blue" : "transparent")
             x: 50
             y: 50
             width: 120
@@ -432,7 +432,7 @@ Window {
         visible: (dd.displayData.page === 1)
 
         Rectangle {
-            color: (dd.displayData.limit[8] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[8] === true ? "blue" : "transparent")
             x: 50
             y: 50
             width: 120

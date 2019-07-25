@@ -25,7 +25,7 @@ Item {
 
     function recColor1(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 1){
-            return "#58FF00"
+            return "#00FF58"
         }else{
             return "4D4D4D"
         }
@@ -33,7 +33,7 @@ Item {
 
     function recColor2(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 2){
-            return "#6AFF00"
+            return "#00FF6A"
         }else{
             return "4D4D4D"
         }
@@ -41,7 +41,7 @@ Item {
 
     function recColor3(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 3){
-            return "#83FF00"
+            return "#00FF83"
         }else{
             return "4D4D4D"
         }
@@ -49,7 +49,7 @@ Item {
 
     function recColor4(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 4){
-            return "#96FF00"
+            return "#00FF96"
         }else{
             return "4D4D4D"
         }
@@ -57,7 +57,7 @@ Item {
 
     function recColor5(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 5){
-            return "#C1FF00"
+            return "#00FFC1"
         }else{
             return "4D4D4D"
         }
@@ -65,7 +65,7 @@ Item {
 
     function recColor6(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 6){
-            return "#DAFF00"
+            return "#00FFDA"
         }else{
             return "4D4D4D"
         }
@@ -73,7 +73,7 @@ Item {
 
     function recColor7(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 7){
-            return "#EDFF00"
+            return "#00FFED"
         }else{
             return "4D4D4D"
         }
@@ -81,7 +81,7 @@ Item {
 
     function recColor8(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 8){
-            return "#FFFF00"
+            return "#00FFFF"
         }else{
             return "4D4D4D"
         }
@@ -89,7 +89,7 @@ Item {
 
     function recColor9(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 9){
-            return "#FFE600"
+            return "#00E6FF"
         }else{
             return "4D4D4D"
         }
@@ -97,7 +97,7 @@ Item {
 
     function recColor10(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 10){
-            return "#FFD400"
+            return "#00D4FF"
         }else{
             return "4D4D4D"
         }
@@ -105,7 +105,7 @@ Item {
 
     function recColor11(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 11){
-            return "#FFBC00"
+            return "#00BCFF"
         }else{
             return "4D4D4D"
         }
@@ -113,7 +113,7 @@ Item {
 
     function recColor12(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 12){
-            return "#FFAA00"
+            return "#00AAFF"
         }else{
             return "4D4D4D"
         }
@@ -121,7 +121,7 @@ Item {
 
     function recColor13(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 13){
-            return "#FF9100"
+            return "#0091FF"
         }else{
             return "4D4D4D"
         }
@@ -129,7 +129,7 @@ Item {
 
     function recColor14(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 14){
-            return "#FF7F00"
+            return "#007FFF"
         }else{
             return "4D4D4D"
         }
@@ -137,7 +137,7 @@ Item {
 
     function recColor15(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 15){
-            return "#FF6700"
+            return "#0067FF"
         }else{
             return "4D4D4D"
         }
@@ -145,7 +145,7 @@ Item {
 
     function recColor16(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 16){
-            return "#FF0000"
+            return "#0000FF"
         }else{
             return "4D4D4D"
         }
@@ -153,7 +153,7 @@ Item {
 
     function recColor17(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 17){
-            return "#FF0000"
+            return "#0000FF"
         }else{
             return "4D4D4D"
         }
@@ -161,7 +161,7 @@ Item {
 
     function recColor18(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 18){
-            return "#FF0000"
+            return "#0000FF"
         }else{
             return "4D4D4D"
         }
@@ -169,7 +169,7 @@ Item {
 
     function recColor19(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 19){
-            return "#FF0000"
+            return "#0000FF"
         }else{
             return "4D4D4D"
         }
@@ -177,7 +177,7 @@ Item {
 
     function recColor20(){
         if(numColoredRec(maxRev,minRev,currentRev,numRec) >= 20){
-            return "#FF0000"
+            return "#0000FF"
         }else{
             return "4D4D4D"
         }

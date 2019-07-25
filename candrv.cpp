@@ -6,7 +6,7 @@ CanDrv::CanDrv(QObject *parent) : QObject(parent)
 {
     QString errorString;
     m_canDevice = QCanBus::instance()->createDevice(
-        QStringLiteral("socketcan"), QStringLiteral("can1"), &errorString);
+        QStringLiteral("socketcan"), QStringLiteral("can0"), &errorString);
 
     if (!m_canDevice) {
         // Error handling goes here
