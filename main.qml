@@ -174,26 +174,26 @@ Window {
         }
 
         Text {
-            id: oil_pres
+            id: fuel_pres
             x: 50
             y: 380
             width: 140
             height: 40
             color: "#ffffff"
-            text: "Oil Pres"
+            text: "Fuel Pres"
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             elide: Text.ElideRight
             font.pixelSize: 20
         }
 
         Text {
-            id: fuel_pres
+            id: oil_pres
             x: 50
             y: 260
             width: 140
             height: 40
             color: "#ffffff"
-            text: "Fuel Pres"
+            text: "Oil Pres"
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             elide: Text.ElideRight
             font.pixelSize: 20
@@ -497,7 +497,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[0] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[0] === true ? "blue" : "transparent")
             x: 200
             y: 320
             width: 120
@@ -514,7 +514,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[1] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[1] === true ? "blue" : "transparent")
             x: 200
             y: 200
             width: 120
@@ -531,24 +531,24 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[2] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[2] === true ? "blue" : "transparent")
             x: 50
-            y: 330
+            y: 320
             width: 120
             height: 60
 
             Text {
                 id: aab_data
-                color: "#ffffff"
-                text: (dd.displayData.grid[2] === 0 ? "Off" : "On")
+                color: (dd.displayData.grid[2] === 0 ? "#ffffff" : "blue")
+                text: (dd.displayData.grid[2] === 0 ? "Lo" : "Hi")
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 elide: Text.ElideRight
-                font.pixelSize: 50
+                font.pixelSize: 60
             }
         }
 
         Rectangle {
-            color: (dd.displayData.limit[3] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[3] === true ? "blue" : "transparent")
             x: 50
             y: 210
             width: 120
@@ -618,7 +618,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[4] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[4] === true ? "blue" : "transparent")
             x: 650
             y: 320
             width: 120
@@ -635,7 +635,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[5] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[5] === true ? "blue" : "transparent")
             x: 650
             y: 200
             width: 120
@@ -652,7 +652,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[6] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[6] === true ? "blue" : "transparent")
             x: 500
             y: 200
             width: 120
@@ -669,7 +669,7 @@ Window {
         }
 
         Rectangle {
-            color: (dd.displayData.limit[7] === true ? "red" : "transparent")
+            color: (dd.displayData.limit[7] === true ? "blue" : "transparent")
             x: 500
             y: 320
             width: 120

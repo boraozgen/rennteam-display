@@ -60,12 +60,12 @@ void DisplayDrv::setCanData(canData_t canData)
         // TODO: not the ideal place for this. CanDrv instead?
         m_displayData.limit[0] = !inRange(20, 90, m_canData.engineWaterTemperature); // 20-80 gelb
         m_displayData.limit[1] = !inRange(20, 130, m_canData.engineOilTemperature); // 20-60 gelb
-        m_displayData.limit[2] = !inRange(5.8, 6.0, m_canData.fuelPressure);
+        m_displayData.limit[2] = !inRange(5.8, 6.5, m_canData.fuelPressure);
         m_displayData.limit[3] = !inRange(1.0, 4.5, m_canData.engineOilPressure);
         m_displayData.limit[4] = !inRange(8, 100, m_canData.throttlePosition);
         m_displayData.limit[5] = !inRange(12, 14, m_canData.batteryVoltage);
-        m_displayData.limit[6] = !inRange(3, 60, m_canData.brakePressureFront);
-        m_displayData.limit[7] = !inRange(3, 60, m_canData.brakePressureRear);
+        m_displayData.limit[6] = !inRange(1, 60, m_canData.brakePressureFront);
+        m_displayData.limit[7] = !inRange(1, 60, m_canData.brakePressureRear);
         m_displayData.limit[8] = !inRange(-1, 11000, m_canData.engineSpeed);
         break;
     case 1:

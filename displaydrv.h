@@ -6,7 +6,7 @@
 #include "candrv.h"
 
 #define GRID_SIZE   9
-#define PAGE_COUNT  3
+#define PAGE_COUNT  2
 
 struct displayData_t{
     Q_GADGET
